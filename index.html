@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional project portfolio for Tonie Cooper, featuring compliance, payroll, fraud examination, and training-focused web projects." />
+  <title>Tonie Cooper | Project Portfolio</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --surface-soft: #eef3f8;
+      --text: #172033;
+      --muted: #5d6b82;
+      --primary: #155e75;
+      --primary-dark: #0f4658;
+      --accent: #d97706;
+      --border: #d9e2ec;
+      --shadow: 0 20px 45px rgba(23, 32, 51, 0.10);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(21, 94, 117, 0.16), transparent 30%),
+        radial-gradient(circle at top right, rgba(217, 119, 6, 0.14), transparent 28%),
+        var(--bg);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+      padding: 56px 0 46px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(21, 94, 117, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.74);
+      color: var(--primary-dark);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1 {
+      max-width: 780px;
+      font-size: clamp(2.55rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.075em;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 12px 22px rgba(21, 94, 117, 0.24);
+    }
+
+    .button.primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .button.secondary {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--text);
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-card h2 {
+      font-size: 1.15rem;
+      margin-bottom: 18px;
+    }
+
+    .metric-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .metric {
+      padding: 16px;
+      border-radius: 18px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.02rem;
+      margin-bottom: 4px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    section {
+      padding: 42px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 3vw, 2.65rem);
+      letter-spacing: -0.045em;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 360px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 14px 28px rgba(23, 32, 51, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #e8f3f7;
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .project-card h3 {
+      font-size: 1.55rem;
+      letter-spacing: -0.035em;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .project-card ul {
+      color: var(--muted);
+      padding-left: 20px;
+      margin-bottom: 22px;
+    }
+
+    .project-card li {
+      margin-bottom: 8px;
+    }
+
+    .project-link {
+      margin-top: auto;
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .project-link:hover {
+      color: var(--primary-dark);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .skill {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .cta {
+      margin: 38px 0 70px;
+      padding: 36px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--primary), #0f766e);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      letter-spacing: -0.045em;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      max-width: 720px;
+      color: rgba(255, 255, 255, 0.86);
+      margin-bottom: 24px;
+    }
+
+    .cta .button {
+      background: #fff;
+      color: var(--primary-dark);
+    }
+
+    footer {
+      padding: 28px 0 36px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .hero {
+        padding-top: 30px;
+      }
+
+      .hero-card,
+      .project-card,
+      .cta {
+        padding: 22px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="page">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#">Tonie Cooper</a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="mailto:tonie_cooper@intuit.com">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero page">
+      <div>
+        <div class="eyebrow">Professional Portfolio</div>
+        <h1>Training-focused web projects built with clarity, structure, and purpose.</h1>
+        <p>
+          I create practical learning experiences that organize complex certification topics into clean,
+          accessible web pages. My work combines compliance-minded thinking, user-friendly design, and
+          front-end development fundamentals.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">View Projects</a>
+          <a class="button secondary" href="mailto:tonie_cooper@intuit.com">Contact Me</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Portfolio highlights">
+        <h2>Portfolio Focus</h2>
+        <div class="metric-list">
+          <div class="metric">
+            <strong>Certification Training</strong>
+            <span>Study tools for professional exam preparation.</span>
+          </div>
+          <div class="metric">
+            <strong>Compliance & Payroll Knowledge</strong>
+            <span>Projects shaped around structured, detail-oriented subject matter.</span>
+          </div>
+          <div class="metric">
+            <strong>Front-End Presentation</strong>
+            <span>Clean layouts, responsive design, and accessible navigation.</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" class="page">
+      <div class="section-heading">
+        <h2>Featured Projects</h2>
+        <p>
+          These projects demonstrate my ability to organize technical learning content into web-based
+          resources that are easy to navigate and useful for learners.
+        </p>
+      </div>
+
+      <div class="projects">
+        <article class="project-card">
+          <div class="tag-row">
+            <span class="tag">Fraud Examination</span>
+            <span class="tag">Study Resource</span>
+            <span class="tag">Web Design</span>
+          </div>
+          <h3>CFE Training Study Page</h3>
+          <p>
+            A certification-focused study page designed to support Certified Fraud Examiner exam preparation.
+          </p>
+          <ul>
+            <li>Organizes exam study content into a clear web experience.</li>
+            <li>Highlights fraud examination and compliance-oriented learning.</li>
+            <li>Demonstrates practical HTML page structure and learner-centered design.</li>
+          </ul>
+          <a class="project-link" href="https://toniecooper.github.io/CFETraining/index.html" target="_blank" rel="noopener noreferrer">
+            Visit CFE Training →
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="tag-row">
+            <span class="tag">Payroll</span>
+            <span class="tag">Certification Prep</span>
+            <span class="tag">Learning Design</span>
+          </div>
+          <h3>CPP Training Study Page</h3>
+          <p>
+            A web-based study resource built to support Certified Payroll Professional exam preparation.
+          </p>
+          <ul>
+            <li>Structures payroll certification content for focused studying.</li>
+            <li>Shows knowledge of professional training and exam-readiness workflows.</li>
+            <li>Demonstrates responsive, practical project presentation for web users.</li>
+          </ul>
+          <a class="project-link" href="https://toniecooper.github.io/CPPTraining/" target="_blank" rel="noopener noreferrer">
+            Visit CPP Training →
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="page">
+      <div class="section-heading">
+        <h2>Skills Demonstrated</h2>
+        <p>
+          This portfolio emphasizes practical strengths that are valuable in compliance, payroll,
+          training, operations, and web-based learning roles.
+        </p>
+      </div>
+
+      <div class="skills-grid" aria-label="Skills list">
+        <div class="skill">HTML & CSS</div>
+        <div class="skill">Responsive Design</div>
+        <div class="skill">Training Content</div>
+        <div class="skill">Certification Prep</div>
+        <div class="skill">Payroll Knowledge</div>
+        <div class="skill">Fraud Awareness</div>
+        <div class="skill">Process Thinking</div>
+        <div class="skill">Clear Communication</div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="cta">
+        <h2>Open to roles where detail, learning, and operational excellence matter.</h2>
+        <p>
+          I am interested in opportunities that value strong documentation, compliance awareness,
+          payroll knowledge, training development, and practical problem-solving.
+        </p>
+        <a class="button" href="mailto:cooperta0621@gmail.com">Start a Conversation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page">
+    <p>© 2026 Tonie Cooper. Built with HTML and CSS.</p>
+  </footer>
+</body>
+</html>
