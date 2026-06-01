@@ -356,6 +356,60 @@
       color: var(--primary-dark);
     }
 
+    
+.case-study-card {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 14px 28px rgba(23, 32, 51, 0.08);
+}
+
+.case-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--primary-dark);
+  font-weight: 800;
+}
+
+.case-study-intro h3 { font-size: 1.8rem; margin-bottom: 12px; }
+.case-study-intro p { color: var(--muted); }
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.case-grid article {
+  padding: 22px;
+  border-radius: 18px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+}
+
+.case-grid h4 { margin-bottom: 10px; font-size: 1.15rem; }
+.case-grid p, .case-grid li { color: var(--muted); }
+.case-grid ul { padding-left: 20px; }
+
+.case-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.case-skills span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #e8f3f7;
+  color: var(--primary-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+
     footer {
       padding: 28px 0 36px;
       color: var(--muted);
@@ -366,7 +420,8 @@
     @media (max-width: 920px) {
       .hero,
       .projects,
-      .achievement-grid {
+      .achievement-grid,
+      .case-grid {
         grid-template-columns: 1fr;
       }
 
@@ -410,6 +465,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#achievements">Achievements</a>
+        <a href="#case-study">Case Study</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#resume">Resume</a>
@@ -530,6 +586,76 @@
         </article>
       </div>
     </section>
+
+    
+<section id="case-study" class="page">
+  <div class="section-heading">
+    <h2>Case Study: Pay & File Operations Hub</h2>
+    <p>A QuickBase-based operations platform designed to centralize payroll tax workflows, improve leadership visibility, simplify agent work management, and automate compliance communications.</p>
+  </div>
+
+  <div class="case-study-card">
+    <span class="case-label">QuickBase • Payroll Tax Operations • Automation</span>
+    <h3>Centralized dashboard solution for agents and leadership</h3>
+
+    <div class="case-grid">
+      <article>
+        <h4>Business Challenge</h4>
+        <p>Leadership needed visibility into workload, SLA performance, QA readiness, agency mail, payment exceptions, and compliance communications while agents needed a simplified workspace focused on their assigned responsibilities.</p>
+      </article>
+
+      <article>
+        <h4>Leadership View</h4>
+        <ul>
+          <li>Team-specific manager dashboards</li>
+          <li>Ticket aging and SLA visibility</li>
+          <li>Quarterly filing QA tracking</li>
+          <li>Checks, mail, and payment exception oversight</li>
+        </ul>
+      </article>
+
+      <article>
+        <h4>Agent View</h4>
+        <ul>
+          <li>Personalized workload dashboard</li>
+          <li>Assigned tickets by state</li>
+          <li>Payment exception tracking</li>
+          <li>Agency mail and task management</li>
+        </ul>
+      </article>
+
+      <article>
+        <h4>Training Library</h4>
+        <p>Created training resources covering Excel, AI prompts, IEP usage, XLOOKUP/VLOOKUP, and operational procedures to improve onboarding and knowledge sharing.</p>
+      </article>
+
+      <article>
+        <h4>Compliance Automation</h4>
+        <p>Built a compliance notes workflow that automatically emails impacted agents when meeting notes are entered and assigned.</p>
+      </article>
+
+      <article>
+        <h4>Business Impact</h4>
+        <ul>
+          <li>Centralized operational workflows</li>
+          <li>Improved visibility and accountability</li>
+          <li>Reduced communication gaps</li>
+          <li>Created scalable training resources</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="case-skills">
+      <span>QuickBase Development</span>
+      <span>Workflow Automation</span>
+      <span>Dashboard Design</span>
+      <span>Business Analysis</span>
+      <span>Training Enablement</span>
+      <span>Process Improvement</span>
+    </div>
+  </div>
+</section>
+
 
     <section id="projects" class="page">
       <div class="section-heading">
